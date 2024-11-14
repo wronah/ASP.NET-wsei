@@ -1,8 +1,8 @@
-using Film.Models;
+using Film3.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Film.Controllers
+namespace Film3.Controllers
 {
     public class HomeController : Controller
     {
