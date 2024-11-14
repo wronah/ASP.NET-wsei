@@ -61,7 +61,7 @@ namespace Film3.Controllers
         // GET: FilmController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(films.FirstOrDefault(x => x.Id == id));
         }
 
         // POST: FilmController/Delete/5
@@ -69,14 +69,9 @@ namespace Film3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            Film filmFromList = films.FirstOrDefault(x => x.Id == id);
+            films.Remove(filmFromList);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
