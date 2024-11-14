@@ -43,7 +43,7 @@ namespace Film3.Controllers
         // GET: FilmController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(films.FirstOrDefault(x => x.Id == id));
         }
 
         // POST: FilmController/Edit/5
