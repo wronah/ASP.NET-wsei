@@ -1,0 +1,23 @@
+﻿@model Kalkulator.Models.Dane[];
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "About";
+    ViewData["Nazwa"] = "ASP.NET";
+}
+<h1>About</h1>
+@ViewBag.powitanie @ViewBag.Name jest @ViewBag.godzina godzina
+as@@wp.pl
+<p>@(DateTime.Now-TimeSpan.FromDays(7))</p>
+
+@{
+    var done = true;
+    <p>to jest @done</p>
+    <text>@DateTime.Now</text>
+}
+
+@foreach (Dane d in Model)
+{
+    <p>@d.Imie @d.Nazwisko</p>
+}

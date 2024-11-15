@@ -1,0 +1,14 @@
+﻿@model Kalkulator.Models.Urodziny;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "UrodzinyForm";
+}
+
+<h1>UrodzinyForm</h1>
+<form action="Urodziny">
+    <input type="text" asp-for="Imie" />Imie
+    <input type="text" asp-for="Nazwisko" />Nazwisko
+    <input type="text" asp-for="Rok" />Rok urodzenia
+</form>
