@@ -1,0 +1,38 @@
+﻿@model Formularz.Models.Dane;
+@{
+    ViewData["Title"] = "Form";
+}
+
+@using (Html.BeginForm("Form", "Dane", FormMethod.Post))
+{
+    @Html.ValidationSummary(false, "", new { @class = "text-danger"})
+    <p>Twoje imie: @Html.TextBoxFor(a => a.Imie)</p>
+    <p>Twoje Email: @Html.TextBoxFor(a => a.Email)</p>
+    <p>Temat: @Html.TextBoxFor(a => a.Temat)</p>
+    <p>Tresc: @Html.TextBoxFor(a => a.Tresc)</p>
+    <input type="submit" />
+}
+
+@* <form asp-action="Form" method="post">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Imie" >Twoje imie</label>
+        <input asp-for="Imie" />
+    </div>
+    <div>
+        <label asp-for="Email">Twoje Email</label>
+        <input asp-for="Email" />
+    </div>
+    <div>
+        <label asp-for="Temat">Twoje Temat</label>
+        <input asp-for="Temat" />
+    </div>
+    <div>
+        <label asp-for="Tresc">Tresc</label>
+        <textarea asp-for="Tresc" ></textarea>
+    </div>
+    <div>
+        <input type="submit" />
+    </div>
+</form> *@
+
