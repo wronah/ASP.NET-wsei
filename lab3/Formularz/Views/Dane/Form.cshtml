@@ -3,36 +3,43 @@
     ViewData["Title"] = "Form";
 }
 
-@using (Html.BeginForm("Form", "Dane", FormMethod.Post))
-{
-    @Html.ValidationSummary(false, "", new { @class = "text-danger"})
-    <p>Twoje imie: @Html.TextBoxFor(a => a.Imie)</p>
-    <p>Twoje Email: @Html.TextBoxFor(a => a.Email)</p>
-    <p>Temat: @Html.TextBoxFor(a => a.Temat)</p>
-    <p>Tresc: @Html.TextBoxFor(a => a.Tresc)</p>
-    <input type="submit" />
-}
-
-@* <form asp-action="Form" method="post">
+<form asp-action="Form" method="post">
     <div asp-validation-summary="All"></div>
     <div>
-        <label asp-for="Imie" >Twoje imie</label>
-        <input asp-for="Imie" />
+        <label asp-for="Imie" ></label>
+        <input type="text" asp-for="Imie" />
     </div>
     <div>
-        <label asp-for="Email">Twoje Email</label>
-        <input asp-for="Email" />
+        <label asp-for="Nazwisko"></label>
+        <input type="text" asp-for="Nazwisko" />
     </div>
     <div>
-        <label asp-for="Temat">Twoje Temat</label>
-        <input asp-for="Temat" />
+        <label asp-for="Email"></label>
+        <input type="email" asp-for="Email" />
     </div>
     <div>
-        <label asp-for="Tresc">Tresc</label>
-        <textarea asp-for="Tresc" ></textarea>
+        <label asp-for="Haslo"></label>
+        <input type="password" asp-for="Haslo" />
+    </div>
+    <div>
+        <label asp-for="PotwierdzHaslo"></label>
+        <input type="password" asp-for="PotwierdzHaslo" />
+    </div>
+    <div>
+        <label asp-for="NrTelefonu"></label>
+        <input type="tel" asp-for="NrTelefonu" />
+    </div>
+    <div>
+        <label asp-for="Wiek"></label>
+        <input type="number" asp-for="Wiek" />
+    </div>
+    <div>
+        <label asp-for="Miasto"></label>
+        <select asp-for="Miasto" asp-items="Html.GetEnumSelectList<Miasta>()"></select>
     </div>
     <div>
         <input type="submit" />
+        <input type="reset" value="Wyczyść" />
     </div>
-</form> *@
+</form>
 
