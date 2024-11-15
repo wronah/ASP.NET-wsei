@@ -53,5 +53,19 @@ namespace Kalkulator.Controllers
             ViewBag.Message = $"witaj {urodziny.Imie} {urodziny.Nazwisko} Masz {DateTime.Now.Year - urodziny.Rok}";
             return View();
         }
+
+        public IActionResult Wynik(KalkulatorModel kalkulator)
+        {
+            int wynik = 0;
+            if (kalkulator.Znak == "dod") wynik = kalkulator.Liczba1 + kalkulator.Liczba2;
+            else if (kalkulator.Znak == "ode") wynik = kalkulator.Liczba1 - kalkulator.Liczba2;
+            ViewBag.wynik = wynik;
+            return View();
+        }
+
+        public IActionResult KalkulatorForm()
+        {
+            return View();
+        }
     }
 }

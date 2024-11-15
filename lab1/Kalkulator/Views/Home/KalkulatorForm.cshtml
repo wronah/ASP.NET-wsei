@@ -1,0 +1,18 @@
+﻿@model Kalkulator.Models.KalkulatorModel;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "KalkulatorForm";
+}
+
+<h1>KalkulatorForm</h1>
+<form action="wynik">
+    <input type="number" asp-for="Liczba1" />
+    <input type="number" asp-for="Liczba2" />
+    <select asp-for="Znak">
+        <option value="dod">Suma</option>
+        <option value="ode">Różnica</option>
+    </select>
+    <input type="submit" />
+</form>
